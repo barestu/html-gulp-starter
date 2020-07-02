@@ -1,0 +1,24 @@
+{
+  "name": "my-gulp-starter",
+  "version": "1.0.0",
+  "description": "Html templating with gulp as task runner.",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "develop": "npm run build && gulp watch"
+  },
+  "keywords": [],
+  "author": "F Barestu",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

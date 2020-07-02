@@ -1,0 +1,14 @@
+@import "./reset";
+@import "./variables";
+
+body {
+  background-color: $bgColor;
+}
+
+header {
+  background-color: orange;
+}
+
+footer {
+  background-color: mistyrose;
+}
