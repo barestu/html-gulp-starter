@@ -10,7 +10,7 @@ const fileinclude = require('gulp-file-include');
 
 // Copy the html file into dist folder
 function buildHtml() {
-  return src('src/*.html')
+  return src('src/html/*.html')
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -26,7 +26,7 @@ function imageMin() {
 }
 
 // Minify JS
-function scripts() {
+function compileJs() {
   return src('src/js/**/*.js')
     .pipe(concat('main.js'))
     .pipe(uglify())
@@ -36,7 +36,7 @@ function scripts() {
 }
 
 // Compile sass into minified css
-function styles() {
+function compileCss() {
   return src('src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(uglifycss({ uglyComments: true }))
@@ -53,8 +53,8 @@ function livereload() {
     }
   });
 
-  watch('src/scss/**/*.scss', styles);
-  watch('src/js/**/*.js', scripts).on('change', browserSync.reload);
+  watch('src/scss/**/*.scss', compileCss);
+  watch('src/js/**/*.js', compileJs).on('change', browserSync.reload);
   watch('src/images/*', imageMin);
   watch('src/**/*.html', buildHtml).on('change', browserSync.reload);
 }
@@ -62,8 +62,8 @@ function livereload() {
 exports.default = series(
   buildHtml,
   imageMin,
-  scripts,
-  styles,
+  compileJs,
+  compileCss,
 );
 
 exports.watch = livereload;
