@@ -1,5 +1,5 @@
 {
-  "name": "my-gulp-starter",
+  "name": "html-gulp-starter",
   "version": "1.0.0",
   "description": "Html templating with gulp as task runner.",
   "main": "index.js",
