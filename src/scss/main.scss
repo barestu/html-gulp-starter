@@ -1,0 +1,12 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.home-banner {
+  height: 200px;
+  border: 2px solid orange;
+}
+
+.slide-card {
+  height: 100px;
+  columns: #ffffff;
+}
