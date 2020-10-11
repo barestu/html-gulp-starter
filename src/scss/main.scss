@@ -1,12 +1,24 @@
 @import "./variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.home-banner {
-  height: 200px;
-  border: 2px solid orange;
+.header {
+  height: 52px;
+  border-bottom: 1px solid #000000;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  min-height: calc(100vh - 200px);
+}
+
+footer {
+  background-color: $primary;
+  min-height: 200px;
 }
 
 .slide-card {
   height: 100px;
-  columns: #ffffff;
+  color: #ffffff;
+  padding: 12px;
 }
