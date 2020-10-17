@@ -7,6 +7,7 @@ const concat = require("gulp-concat");
 const rename = require("gulp-rename");
 const fileinclude = require("gulp-file-include");
 const concatCss = require("gulp-concat-css");
+const autoprefixer = require('gulp-autoprefixer');
 
 // Copy the html file into dist folder
 function html() {
@@ -36,6 +37,7 @@ function jsPlugins() {
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
     "node_modules/owl.carousel/dist/owl.carousel.min.js",
+    "node_modules/select2/dist/js/select2.min.js"
   ])
     .pipe(concat("plugins.js"))
     .pipe(uglify())
@@ -47,6 +49,7 @@ function jsPlugins() {
 function css() {
   return src("src/scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(uglifycss({ uglyComments: true }))
     .pipe(rename({ basename: 'styles', extname: ".min.css" }))
     .pipe(dest("dist/assets/css"))
@@ -57,7 +60,8 @@ function css() {
 function cssPlugins() {
   return src([
     "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-    "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
+    "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+    "node_modules/select2/dist/css/select2.min.css"
   ])
     .pipe(concatCss('plugins.min.css'))
     .pipe(uglifycss({ uglyComments: true }))
