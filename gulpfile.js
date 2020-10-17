@@ -83,13 +83,9 @@ function livereload() {
 }
 
 exports.default = series(
-  parallel(
-    html,
-    js,
-    jsPlugins,
-    css,
-    cssPlugins,
-  ),
+  html,
+  parallel(jsPlugins, cssPlugins),
+  parallel(js, css),
 );
 
 exports.watch = livereload;
