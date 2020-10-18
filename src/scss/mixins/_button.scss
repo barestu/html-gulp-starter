@@ -1,0 +1,20 @@
+// Button
+$btn-font-weight: 600;
+$btn-font-size: 14px;
+$btn-border-radius: 4px;
+$btn-padding-y: 4px;
+$btn-padding-x: 30px;
+
+.btn-primary {
+  color: $white !important;
+  &:hover {
+    background-color: $primary-light !important;
+    border-color: $primary-light !important;
+  }
+}
+.btn-outline-primary {
+  color: $black !important;
+  &:hover {
+    background-color: $grey-light !important;
+  }
+}

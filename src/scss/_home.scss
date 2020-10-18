@@ -1,0 +1,40 @@
+#home-page {
+  #heroCarousel {
+    position: relative;
+
+    .slide-item {
+      background: url("/assets/images/hero1.jpg") no-repeat center;
+      background-size: cover;
+
+      .slide-content {
+        height: 576px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .hero-title {
+          max-width: 50%;
+          margin-bottom: 1.5rem;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .owl-nav {
+      .owl-prev, .owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: red;
+        margin: 0;
+      }
+      .owl-prev {
+        left: 0;
+      }
+      .owl-next {
+        right: 0;
+      }
+    }
+  }
+}

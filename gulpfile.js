@@ -68,6 +68,11 @@ function cssPlugins() {
     .pipe(dest("dist/assets/css"));
 }
 
+function copyAssets() {
+  return src("src/assets/**/*")
+    .pipe(dest("dist/assets"));
+}
+
 // Watch for any src file changes
 function livereload() {
   browserSync.init({
@@ -80,12 +85,14 @@ function livereload() {
   watch("src/scss/**/*.scss", css);
   watch("src/js/**/*.js", js).on("change", browserSync.reload);
   watch("src/**/*.html", html).on("change", browserSync.reload);
+  watch("src/assets/**/*", copyAssets);
 }
 
 exports.default = series(
   html,
   parallel(jsPlugins, cssPlugins),
   parallel(js, css),
+  copyAssets,
 );
 
 exports.watch = livereload;
