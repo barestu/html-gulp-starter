@@ -1,7 +1,11 @@
 @@include('./components/_documents/_head.html', { "title": "MyGulp | Home" })
-<body>
-  @@include('./components/_header.html')
-  @@include('./components/home/_view.html')
-  @@include('./components/_footer.html')
-</body>
+<main id="app">
+  @@include('./components/layout/_header.html')
+
+  <div class="homepage">
+    <h1>homepage</h1>
+  </div>
+
+  @@include('./components/layout/_footer.html')
+</main>
 @@include('./components/_documents/_foot.html')

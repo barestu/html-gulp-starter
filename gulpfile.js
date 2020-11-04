@@ -8,6 +8,16 @@ const rename = require("gulp-rename");
 const fileinclude = require("gulp-file-include");
 const concatCss = require("gulp-concat-css");
 const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
+
+// Delete previous built file
+function clean() {
+  return del([
+    'dist/assets/images',
+    'dist/assets/fonts',
+    'dist/**/*.html'
+  ])
+}
 
 // Copy the html file into dist folder
 function html() {
@@ -68,6 +78,7 @@ function cssPlugins() {
     .pipe(dest("dist/assets/css"));
 }
 
+// Copy assets file to dist
 function copyAssets() {
   return src("src/assets/**/*")
     .pipe(dest("dist/assets"));
@@ -89,9 +100,10 @@ function livereload() {
 }
 
 exports.default = series(
+  clean,
   html,
-  parallel(jsPlugins, cssPlugins),
   parallel(js, css),
+  parallel(jsPlugins, cssPlugins),
   copyAssets,
 );
 
