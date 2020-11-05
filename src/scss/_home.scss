@@ -1,39 +1,36 @@
-#home-page {
-  #heroCarousel {
-    position: relative;
+.home-page {
+  .hero {
+    background-color: $grey;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    overflow: hidden;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     .slide-item {
-      background: url("/assets/images/hero1.jpg") no-repeat center;
-      background-size: cover;
-
-      .slide-content {
-        height: 576px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-
-        .hero-title {
-          max-width: 50%;
-          margin-bottom: 1.5rem;
-          font-weight: 700;
-        }
-      }
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: pink;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
+  }
 
-    .owl-nav {
-      .owl-prev, .owl-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: red;
-        margin: 0;
-      }
-      .owl-prev {
-        left: 0;
-      }
-      .owl-next {
-        right: 0;
+  .app-menu {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .menu-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .menu-item {
+        text-align: center;
+        text-decoration: none;
+        .menu-item-content {
+          background: $grey;
+        }
       }
     }
   }

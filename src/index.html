@@ -1,11 +1,37 @@
 @@include('./components/_documents/_head.html', { "title": "MyGulp | Home" })
 <main id="app">
-  @@include('./components/layout/_header.html')
+  <div class="home-page">
+    <section class="hero">
+      <div class="hero-carousel owl-carousel owl-theme">
+        @@for (var i = 0; i < 5; i++) {
+          <div class="slide-item">
+            <div class="text-center">
+              <h2>Portal ABCD</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
 
-  <div class="homepage">
-    <h1>homepage</h1>
+    <section class="app-menu">
+      <div class="container">
+        <div class="menu-list">
+          @@for (var i = 0; i < 8; i++) {
+            <a href="#" class="menu-item">
+              <div class="menu-item-content">
+                <img src="/assets/images/icon.jpg" alt="Menu icon">
+                <p>Aplikasi A</p>
+              </div>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="e-magazine"></section>
+
+    <section class="gallery"></section>
   </div>
-
-  @@include('./components/layout/_footer.html')
 </main>
 @@include('./components/_documents/_foot.html')

@@ -1,0 +1,14 @@
+.login-page {
+  .col-left, .col-right {
+    height: 100vh;
+    overflow: auto;
+  }
+  .col-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .col-right {
+    background-color: rgb(190, 190, 190);
+  }
+}

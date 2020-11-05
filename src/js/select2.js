@@ -1,5 +1,5 @@
 // In your Javascript (external .js resource or <script> tag)
-$(document).ready(function() {
+$(function() {
   $('.select2').select2({
     placeholder: 'Silahkan pilih',
     ajax: {
