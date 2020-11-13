@@ -87,6 +87,7 @@ function copyAssets() {
 // Watch for any src file changes
 function livereload() {
   browserSync.init({
+    port: 3123,
     server: {
       baseDir: "dist/",
     },
