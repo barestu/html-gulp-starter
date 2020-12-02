@@ -1,6 +1,19 @@
-$input-font-size: 14px;
-$input-border-radius: 4px;
+// Input
+$input-padding-y: .6rem;
+$input-padding-x: .75rem;
+
+$input-bg: #F6F8FB;
+
+$input-border-radius: 6px;
 $input-border-width: 1px;
-$input-border-color: #BDBDBD;
-$input-placeholder-color: #BDBDBD;
+$input-border-color: #D4E0EB;
+
+$input-font-size: 14px;
 $input-font-weight: 500;
+$input-placeholder-color: #D4E0EB;
+
+.form-group {
+  label {
+    margin-bottom: 4px;
+  }
+}

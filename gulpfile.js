@@ -8,15 +8,19 @@ const rename = require("gulp-rename");
 const fileinclude = require("gulp-file-include");
 const concatCss = require("gulp-concat-css");
 const autoprefixer = require('gulp-autoprefixer');
+const cssbeautify = require('gulp-cssbeautify');
 const del = require('del');
 
 // Delete previous built file
 function clean() {
   return del([
     'dist/assets/images',
+    'dist/assets/icons',
     'dist/assets/fonts',
+    'dist/assets/css',
+    'dist/assets/js',
     'dist/**/*.html'
-  ])
+  ]);
 }
 
 // Copy the html file into dist folder
@@ -35,7 +39,7 @@ function html() {
 function js() {
   return src("src/js/**/*.js")
     .pipe(concat("app.js"))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(rename({ extname: ".min.js" }))
     .pipe(dest("dist/assets/js"))
     .pipe(browserSync.stream());
@@ -60,8 +64,9 @@ function css() {
   return src("src/scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(uglifycss({ uglyComments: true }))
+    // .pipe(uglifycss({ uglyComments: true }))
     .pipe(rename({ basename: 'styles', extname: ".min.css" }))
+    .pipe(cssbeautify())
     .pipe(dest("dist/assets/css"))
     .pipe(browserSync.stream());
 }

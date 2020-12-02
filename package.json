@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "gulp-cssbeautify": "^3.0.0",
     "owl.carousel": "^2.3.4",
     "select2": "^4.0.13"
   },

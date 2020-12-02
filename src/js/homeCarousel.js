@@ -1,3 +1,6 @@
+/**
+ * Start of owl carousel script
+ */
 $(function () {
   $('.hero-carousel').owlCarousel({
     loop: true,
@@ -8,3 +11,6 @@ $(function () {
     dots: false
   });
 });
+/**
+ * End of owl carousel script
+ */

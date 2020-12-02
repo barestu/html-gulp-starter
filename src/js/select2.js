@@ -1,4 +1,6 @@
-// In your Javascript (external .js resource or <script> tag)
+/**
+ * Start of select2 script
+ */
 $(function() {
   $('.select2').select2({
     placeholder: 'Silahkan pilih',
@@ -25,3 +27,6 @@ $(function() {
     }
   });
 });
+/**
+ * End of select2 script
+ */
